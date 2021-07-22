@@ -87,6 +87,3 @@ target/
 
 # Mypy cache
 .mypy_cache/
-.logger_file/
-src/scrap_data_from flipkart.py
-Loggings
