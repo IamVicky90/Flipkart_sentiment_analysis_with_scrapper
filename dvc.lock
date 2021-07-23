@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  add_csv_file_data_to_mongodb:
+    cmd: python src/db_operations/mongodb_ops/mongodb_operations.py
+    deps:
+    - path: src/db_operations/mongodb_ops/mongodb_operations.py
+      md5: 39e83b1257e9046b4308921624b061d4
+      size: 1033
+  scrap_data_from_flipkart:
+    cmd: python src/create_data/scrap_data_from_flipkart.py samsung
+    deps:
+    - path: src/create_data/scrap_data_from_flipkart.py
+      md5: b72980461200cdf5bbc03f14c487fa59
+      size: 6193
