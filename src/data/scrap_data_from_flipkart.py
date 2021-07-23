@@ -23,6 +23,8 @@ class scrapper:
         del bigbox[0:3]
         columns=['product','customer_name','ratings','header','comment']
         for iter,box in enumerate(bigbox):
+            if iter==10:
+                break
             try:
                 product_link='https://www.flipkart.com'+box.div.div.div.a['href']
                 product_page=requests.get(product_link)
@@ -63,7 +65,7 @@ class scrapper:
                             customer_name='Unknown'
                         data_list.append(str(customer_name))
                         
-                        with open('data.csv', 'a', encoding='UTF8', newline='') as f:
+                        with open('data/raw/raw_data.csv', 'a', encoding='UTF8', newline='') as f:
                             writer = csv.writer(f)
                             # write the header
                             if iter==0:
