@@ -1,0 +1,39 @@
+2021-07-24 23:14:33.768315	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:14:33.769282	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:14:36.308131	2021-07-24		Warning: The process of dumping the data of product iphone_20210724_380738 is now starting in a while
+2021-07-24 23:14:36.308447	2021-07-24		INFO: database has been created successfully with name iphone_20210724_380738
+2021-07-24 23:18:40.425076	2021-07-24		INFO: mongodb_operations module has been done
+2021-07-24 23:20:38.801427	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:20:38.801780	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:20:41.563980	2021-07-24		Warning: iphone_20210724_380738 data is already dumped into database so leave this process
+2021-07-24 23:20:41.564409	2021-07-24		INFO: mongodb_operations module has been done
+2021-07-24 23:27:48.546818	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:27:48.547085	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:27:51.438240	2021-07-24		Warning: iphone_20210724_380738 data is already dumped into database so leave this process
+2021-07-24 23:27:51.745342	2021-07-24		Warning: The process of dumping the data of product headphone_20210724_91466 is now starting in a while
+2021-07-24 23:27:51.745814	2021-07-24		INFO: database has been created successfully with name headphone_20210724_91466
+2021-07-24 23:31:24.145130	2021-07-24		INFO: mongodb_operations module has been done
+2021-07-24 23:32:54.678360	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:32:54.679003	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:32:57.309481	2021-07-24		Warning: iphone_20210724_380738 data is already dumped into database so leave this process
+2021-07-24 23:32:57.617488	2021-07-24		Warning: headphone_20210724_91466 data is already dumped into database so leave this process
+2021-07-24 23:32:57.618205	2021-07-24		INFO: mongodb_operations module has been done
+2021-07-24 23:40:37.723142	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:40:37.723346	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:40:40.267019	2021-07-24		Warning: iphone_20210724_380738 data is already dumped into database so leave this process
+2021-07-24 23:40:40.573695	2021-07-24		Warning: The process of dumping the data of product samsung_20210724_287798 is now starting in a while
+2021-07-24 23:40:40.574056	2021-07-24		INFO: database has been created successfully with name samsung_20210724_287798
+2021-07-24 23:44:12.598156	2021-07-24		Warning: headphone_20210724_91466 data is already dumped into database so leave this process
+2021-07-24 23:44:12.598967	2021-07-24		INFO: mongodb_operations module has been done
+2021-07-24 23:46:25.314262	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:46:25.314594	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:46:28.002160	2021-07-24		Warning: iphone_20210724_380738 data is already dumped into database so leave this process
+2021-07-24 23:46:28.239029	2021-07-24		Warning: samsung_20210724_287798 data is already dumped into database so leave this process
+2021-07-24 23:46:28.530039	2021-07-24		Warning: headphone_20210724_91466 data is already dumped into database so leave this process
+2021-07-24 23:46:28.530506	2021-07-24		INFO: mongodb_operations module has been done
+2021-07-24 23:55:01.373338	2021-07-24		INFO: Connected to the mongodb client
+2021-07-24 23:55:01.373580	2021-07-24		INFO: Successfully creating the web_scrapper database
+2021-07-24 23:55:04.210307	2021-07-24		Warning: iphone_20210724_380738 data is already dumped into database so leave this process
+2021-07-24 23:55:04.517253	2021-07-24		Warning: samsung_20210724_287798 data is already dumped into database so leave this process
+2021-07-24 23:55:04.825289	2021-07-24		Warning: headphone_20210724_91466 data is already dumped into database so leave this process
+2021-07-24 23:55:04.825884	2021-07-24		INFO: mongodb_operations module has been done

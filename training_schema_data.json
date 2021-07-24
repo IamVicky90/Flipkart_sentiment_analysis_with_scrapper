@@ -1,0 +1,13 @@
+{
+    "SampleFileName": "product_20210724_092057.csv",
+	"LengthOfDateStampInFile": 8,
+	"LengthOfTimeStampInFile": 6,
+	"NumberofColumns" :18,
+
+"Column_name":
+{"product":"varchar2",
+"customer_name":"varchar2",
+"ratings":"varchar2",
+"header":"varchar2",
+"comment":"varchar2"}
+}

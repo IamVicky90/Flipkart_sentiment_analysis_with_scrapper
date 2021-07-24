@@ -1,10 +1,11 @@
-import os
 import argparse
 from bs4 import BeautifulSoup as bs
 import requests 
 from urllib.request import urlopen as ureq
 from src.logger_file import logger
 import csv
+import os
+import datetime
 class scrapper:
     def __init__(self):
         self.log=  logger.log()
@@ -16,8 +17,9 @@ class scrapper:
         Version: 1.0
         Revisions: None
         """
+        search_string=search_string.replace(' ','')
         self.log.log_writter(f'Process to scrap the data is started','scrapper.log')
-        url='https://www.flipkart.com/search?q='+search_string.replace(' ','')
+        url='https://www.flipkart.com/search?q='+search_string
         self.log.log_writter(f'search string is {search_string}','scrapper.log')
         try:
             uclient=ureq(url)
@@ -40,13 +42,16 @@ class scrapper:
         columns=['product','customer_name','ratings','header','comment']
         csv_data_path=os.path.join('data','raw')
         try:
-            if os.sys=='Windows':
-                path=csv_data_path+"\\"+f'{str(len(os.listdir(csv_data_path)))}_{search_string}.csv'
+            now=datetime.datetime.now()
+            datestamp=now.strftime('%Y%m%d')
+            timestamp=int(str(now.timestamp()).split('.')[1])
+            if os.sys.platform=='Windows':
+                path=csv_data_path+"\\"+f'{search_string}_{datestamp}_{timestamp}.csv'
             else:
-                path=csv_data_path+"/"+f'{str(len(os.listdir(csv_data_path)))}_{search_string}.csv'
-            self.log.log_writter(f'Sucessfully take the path for csv_data_path that is {csv_data_path} for system {str(os.sys)}','scrapper.log')
+                path=csv_data_path+"/"+f'{search_string}_{datestamp}_{timestamp}.csv'
+            self.log.log_writter(f'Sucessfully take the path for csv_data_path that is {csv_data_path} for system {str(os.sys.platform)}','scrapper.log')
         except Exception as e:
-            self.log.log_writter(f'Couldnot take the path for csv_data_path for system {str(os.sys)}','scrapper.log',message_type='ERROR')
+            self.log.log_writter(f'Couldnot take the path for csv_data_path for system {str(os.sys.platform)}','scrapper.log',message_type='ERROR')
         for iter,box in enumerate(bigbox):
             if iter==10:
                 break
@@ -64,11 +69,14 @@ class scrapper:
                 for i,page_link in enumerate(pages_links):
                     if i==10:
                         break
-                    page_request_link='https://www.flipkart.com'+page_link['href']
-                    page_request=requests.get(page_request_link)
-                    self.log.log_writter(f'page request link is: https://www.flipkart.com+{page_request_link}','scrapper.log')
-                    page_html=bs(page_request.text,'html.parser')
-                    product_review_section=page_html.findAll('div',{'class':'col _2wzgFH K0kLPL'})
+                    try:
+                        page_request_link='https://www.flipkart.com'+page_link['href']
+                        page_request=requests.get(page_request_link)
+                        self.log.log_writter(f'page request link is: https://www.flipkart.com+{page_request_link}','scrapper.log')
+                        page_html=bs(page_request.text,'html.parser')
+                        product_review_section=page_html.findAll('div',{'class':'col _2wzgFH K0kLPL'})
+                    except Exception as e:
+                        self.log.log_writter(f'Some error is occured while taking the page links error, {str(e)}','scrapper.log',message_type='ERROR')
                     for var_i,review in enumerate(product_review_section):
                         data_list=[]
                         data_list.append(str(search_string))
@@ -92,16 +100,14 @@ class scrapper:
                         except Exception as e:
                             comment='Unknown'
                         data_list.append(str(comment))
-
                         with open(path, 'a', encoding='UTF8', newline='') as f:
                             writer = csv.writer(f)
                             # write the header
                             if iter==0 and i==0 and var_i==0:
                                 writer.writerow(columns)
-                            # write multiple rows
                             writer.writerow(data_list)
             except Exception as e:
-                self.log.log_writter(f'Error occured while scraping the data so we stop here','scrapper.log',message_type='ERROR')
+                self.log.log_writter(f'Error occured while scraping the data so we stop here error, {str(e)}','scrapper.log',message_type='ERROR')
         self.log.log_writter(f'Sucessfully scrapped the data and completed the process','scrapper.log')
 
 parser = argparse.ArgumentParser(description='Enter the string to search that product')

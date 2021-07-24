@@ -47,8 +47,7 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
+
 
 # Sphinx documentation
 docs/_build/
@@ -86,3 +85,4 @@ target/
 
 # Mypy cache
 .mypy_cache/
+test_temp.py

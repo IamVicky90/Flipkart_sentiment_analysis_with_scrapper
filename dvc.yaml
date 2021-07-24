@@ -1,9 +1,10 @@
 stages:
-  scrap_data_from_flipkart:
-    cmd: python src/create_data/scrap_data_from_flipkart.py samsung
+  first_scrap_data_from_flipkart:
+    cmd: python src/create_data/scrap_data_from_flipkart.py "dell+laptop"
     deps: 
     - src/create_data/scrap_data_from_flipkart.py
-  add_csv_file_data_to_mongodb: 
+  second_add_csv_file_data_to_mongodb: 
     cmd: python src/db_operations/mongodb_ops/mongodb_operations.py
     deps: 
     - src/db_operations/mongodb_ops/mongodb_operations.py
+    - data/raw/
